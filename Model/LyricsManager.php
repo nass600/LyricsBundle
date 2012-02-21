@@ -10,14 +10,16 @@ class LyricsManager
 		$this->provider = new $provider;
 	}
 
-	public function searchLyrics(){
-		echo "<pre>";
-		\Doctrine\Common\Util\Debug::dump($this->provider);
-		echo "</pre>";
-		die;
+	public function searchLyrics($query){
+		$this->provider->setParameter('q', $query);
+		$results = $this->provider->searchLyrics();
+
+		return $results;
 	}
 
 	public function getLyrics(){
+		$results = $this->provider->getLyrics();
 
+		return $results;
 	}
 }
