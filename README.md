@@ -60,8 +60,16 @@ Usage
 
 ### SearchLyrics
 
+Just access the service and search for a certain track and put an output format
+
+	$this->get('nass600.lyrics.manager')->searchLyrics("MICHAEL JACKSON Don't stop til get enough", "json");
+
 ### GetLyrics
 
+Using the service, get the lyrics via passing the corresponding track id according to the web service in use and an
+output format
+
+	$this->get('nass600.lyrics.manager')->getLyrics("170987", 'text');
 
 License
 -------
