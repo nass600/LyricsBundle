@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
 		    ->children()
-                ->scalarNode('provider')->end()
+                ->scalarNode('provider')->defaultValue('nass600\LyricsBundle\Adapter\LyrDBAdapter')->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;
