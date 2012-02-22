@@ -30,11 +30,9 @@ class LyricsManager
 	public function searchLyrics($query, $format){
 		$results = $this->adapter->searchLyrics($query, $format);
 
-		echo "<pre>";
-		var_dump($results);
-		echo "</pre>";
+		$errors = $this->hasErrors($results);
 
-		return $results;
+		return (!$errors) ? $results : null;
 	}
 
 	/**
@@ -47,10 +45,41 @@ class LyricsManager
 	public function getLyrics($id, $format){
 		$results = $this->adapter->getLyrics($id, $format);
 
-		echo "<pre>";
-		var_dump($results);
-		echo "</pre>";
+		$errors = $this->hasErrors($results);
 
-		return $results;
+		return (!$errors) ? $results : null;
+	}
+
+	/**
+	 * Searches for the $query text and retrieves in one step the best lyrics
+	 *
+	 * @param string $query
+	 * @param string $format
+	 * @return mixed
+	 */
+	public function getBestLyrics($query, $format){
+		$results = $this->adapter->getBestLyrics($query, $format);
+
+		$errors = $this->hasErrors($results);
+
+		return (!$errors) ? $results : null;
+	}
+
+	/**
+	 * Checks that response does not contain any errors
+	 *
+	 * @param $results
+	 * @return bool
+	 */
+	public function hasErrors($results)
+	{
+		try{
+			$lyrdb = new \SimpleXMLElement($results);
+		}
+		catch (\Exception $e){
+			return false;
+		}
+
+		return ($lyrdb->error->number == null) ? false : true;
 	}
 }

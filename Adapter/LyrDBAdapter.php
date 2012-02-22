@@ -13,10 +13,9 @@ namespace nass600\LyricsBundle\Adapter;
 class LyrDBAdapter extends AbstractAdapter implements AdapterInterface
 {
 	const API_URL = "http://webservices.lyrdb.com/dev/function.php?parameters";
-
 	const SEARCH_FUNCTION = "lookup";
-
 	const GET_FUNCTION = "getlyr";
+	const GET_BEST_FUNCTION = "bestlyrics";
 
 	protected $validFormats = array('text', 'xml', 'json');
 
@@ -40,6 +39,19 @@ class LyrDBAdapter extends AbstractAdapter implements AdapterInterface
 		$this->setOutputFormat($format);
 
 		$url = str_replace('function', self::GET_FUNCTION, $this->getUrl());
+
+		$data = $this->getFeed($url);
+
+		return $data;
+	}
+
+	public function getBestLyrics($query, $format)
+	{
+		$this->setParameter('q', $query);
+		$this->setParameter('agent', 'trial');
+		$this->setOutputFormat($format);
+
+		$url = str_replace('function', self::GET_BEST_FUNCTION, $this->getUrl());
 
 		$data = $this->getFeed($url);
 
