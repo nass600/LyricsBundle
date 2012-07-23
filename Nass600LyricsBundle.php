@@ -5,12 +5,12 @@
  * Time: 12:05 PM
  */
 
-namespace nass600\LyricsBundle;
+namespace Nass600\LyricsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class nass600LyricsBundle extends Bundle
+class Nass600LyricsBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

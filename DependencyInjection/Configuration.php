@@ -1,6 +1,6 @@
 <?php
 
-namespace nass600\LyricsBundle\DependencyInjection;
+namespace Nass600\LyricsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
 		    ->children()
-                ->scalarNode('provider')->defaultValue('nass600\LyricsBundle\Adapter\LyrDBAdapter')->cannotBeEmpty()->end()
+                ->scalarNode('provider')->defaultValue('Nass600\LyricsBundle\Adapter\LyrDBAdapter')->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;

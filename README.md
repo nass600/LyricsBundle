@@ -38,7 +38,7 @@ Add PachubeBundle to your `app/AppKernel.php`:
     {
         return array(
             // ...
-            new nass600\LyricsBundle\nass600LyricsBundle(),
+            new Nass600\LyricsBundle\nass600LyricsBundle(),
         );
     }
 
@@ -48,7 +48,7 @@ Configuration
 Add the lyrics class adapter to your app/config.yml:
 
 	nass600_lyrics:
-        provider: nass600\LyricsBundle\Adapter\LyrDBAdapter
+        provider: Nass600\LyricsBundle\Adapter\LyrDBAdapter
 
 
 By default is set to use the LyrDB API for offering the best API related to lyrics services so you don't have to put

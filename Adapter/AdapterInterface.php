@@ -1,11 +1,11 @@
 <?php
 
-namespace nass600\LyricsBundle\Adapter;
+namespace Nass600\LyricsBundle\Adapter;
 
 /**
  * AdapterInterface
  *
- * @package nass600LyricsBundle
+ * @package Nass600LyricsBundle
  * @subpackage Adapter
  * @author Ignacio Velázquez Gómez <ivelazquez85@gmail.com>
  * @copyright Ignacio Velázquez Gómez

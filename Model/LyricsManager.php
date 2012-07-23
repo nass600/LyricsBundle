@@ -1,13 +1,13 @@
 <?php
 
-namespace nass600\LyricsBundle\Model;
+namespace Nass600\LyricsBundle\Model;
 
-use nass600\LyricsBundle\Adapter\AdapterInterface;
+use Nass600\LyricsBundle\Adapter\AdapterInterface;
 
 /**
  * LyricsManager
  *
- * @package nass600LyricsBundle
+ * @package Nass600LyricsBundle
  * @subpackage Model
  * @author Ignacio Velázquez Gómez <ivelazquez85@gmail.com>
  * @copyright Ignacio Velázquez Gómez
